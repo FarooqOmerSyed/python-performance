@@ -1,0 +1,49 @@
+Commands - instructions 
+
+# c profiling 
+-> python -m cProfile large_function.py
+
+# line profiling 
+
+Install line_profiler  
+
+-> pip install line_profiler
+
+Decorate the function with @profile 
+
+Run command 
+-> kernprof -lv large_function.py
+
+
+
+# memory profiling 
+
+Memory_profiler 
+
+->pip install memory_profiler 
+
+Decorate the functions with @profile
+
+
+->python -m memory_profiler memory_bottleneck.py
+
+
+
+# visualize the functions 
+
+
+->pip install matplotlib
+->mprof run memory_bottleneck.py
+->mprof plot --output memory_bottleneck.jpg
+
+
+snakeviz  # visualizer
+
+->pip install snakeviz
+->python -m cProfile -o sum_loop.prof sum_loop.py
+->snakeviz sum_loop.prof
+
+# list vs numpy array
+numpy arrays are faster 
+->python -m cProfile -o list_array.prof list_array.py
+->snakeviz list_array.prof
